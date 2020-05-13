@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 $servername = "localhost";
 $username = "root";
 $pass = "";
@@ -22,9 +22,11 @@ else {
 
    if($result -> num_rows == 1) {
        echo "Logged in succesfully.";
-       header('Location:bsection.html');
+       $_SESSION["logged"] = 'true';
+       $_SESSION["email"] = $email;
+       header('Location:section.php');
    }else {
-       echo "Invalid credentials.";
+        header('Location:index.html');
    }
 }
 
