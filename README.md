@@ -13,4 +13,4 @@ Task 1: :heavy_check_mark:
 Create a secure Login route and add classes for each user(Teacher)
 so that they can view the students in the class.
 
-Task 2::white_check_mark:(Not assigned)
+Task 2: :white_check_mark:(Not assigned)
