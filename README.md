@@ -1,6 +1,6 @@
 # Spectrum-Internship
 
-## Project was made using Xampp Server.
+## Project was made using Xampp (Apache + MySQL).
 ### To run the project:
 1. Install Xampp.
 2. Import spectrum.sql database into the server.
