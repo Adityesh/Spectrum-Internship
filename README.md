@@ -13,7 +13,7 @@ Task 1: :heavy_check_mark:
 Create a secure Login route and add classes for each user(Teacher)
 so that they can view the students in the class.
 
-Task 2: :x: Create an attendance system for the logged in user.
+Task 2: :heavy_check_mark: Create an attendance system for the logged in user.
 
 
 Default Login credentials for the login page :
