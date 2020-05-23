@@ -30,3 +30,14 @@ nav {
 }
 
 
+.header {
+	display: flex;
+	flex-direction: column;
+}
+
+.present {
+	font-size: 10px;
+}
+
+
+
