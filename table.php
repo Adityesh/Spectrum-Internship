@@ -15,7 +15,7 @@ if ($conn -> connect_error) {
 
 else {
    $date = $_POST["date"];
-   $sql = "ALTER TABLE  `civil` ADD  `$date` VARCHAR(255) NOT NULL;";
+   $sql = "ALTER TABLE  `civil` ADD  `$date` VARCHAR(255) NOT NULL default 'A';";
    $result = $conn -> query($sql);
    header('Location:bce.php');
 

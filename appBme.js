@@ -10,7 +10,7 @@ for (var i = 0; i < presentBtns.length; i++) {
         const form = document.createElement('form');
         form.style.display = 'none';
         document.body.appendChild(form);
-        form.action = 'present.php';
+        form.action = 'presentBme.php';
         form.method = 'post';
         input1 = document.createElement('input');
         input1.type = 'hidden';
@@ -36,7 +36,7 @@ for (var i = 0; i < absentBtns.length; i++) {
         const form = document.createElement('form');
         form.style.display = 'none';
         document.body.appendChild(form);
-        form.action = 'absent.php';
+        form.action = 'absentBme.php';
         form.method = 'post';
         input1 = document.createElement('input');
         input1.type = 'hidden';

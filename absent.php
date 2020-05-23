@@ -14,11 +14,15 @@ if ($conn -> connect_error) {
 }
 
 else {
+   $id = $_POST["id"];
    $date = $_POST["date"];
-   $sql = "ALTER TABLE  `bme` ADD  `$date` VARCHAR(255) NOT NULL default 'A';";
-   $result = $conn -> query($sql);
-   header('Location:bme.php');
-
+//    $sql = "UPDATE civil SET ' . mysqli_real_escape_string($conn,$_POST['date']) . '='A' WHERE id={$id}";
+    $sql = "UPDATE civil SET `".$date."`= 'A' WHERE id={$id}";
+   if ($conn->query($sql) === TRUE) {
+    header('Location:bce.php');
+  } else {
+    echo "Error updating record: " . $conn->error;
+  }
 }
 
 ?>

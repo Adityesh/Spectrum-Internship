@@ -40,6 +40,7 @@
                     $username = "root";
                     $pass = "";
                     $db = "Spectrum";
+                    $dates = array();
                     //Create connection to the database.
                     $conn = new mysqli($servername, $username, $pass, $db);
             
@@ -56,32 +57,25 @@
                         while ($x = $result->fetch_assoc()){
                         $fields[] = $x['Field'];
                         }
-                        foreach ($fields as $f) { 
+                        $date = '';
+                        foreach ($fields as $key=>$f) { 
+                            if($key > 2) {
+                                array_push($dates,$f);
+                            }
                             echo "<th scope='col'>{$f}</th>"; 
-                        }   
-                     }
+                        }
+                    }   
+                        
+                     
             
                 } else {
                     session_destroy();
                     header('Location:index.html');
-                }   
-              ?>
-              </tr>
-            </thead>
-            <tbody>
-              <?php
-    if($_SESSION['logged'] == 'true') {
-        $servername = "localhost";
-        $username = "root";
-        $pass = "";
-        $db = "Spectrum";
-        //Create connection to the database.
-        $conn = new mysqli($servername, $username, $pass, $db);
-
-        //Check if connection is made.
-        if ($conn -> connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        } else {
+                }  
+                
+                echo "</tr>";
+                echo "</thead>";
+                echo "<tbody>";
             
             //BCE TABLE IS CALLED
             $sql = "SELECT * FROM bme";
@@ -95,40 +89,35 @@
                     foreach($records as $x) {
                         $rec = array_values($x);
                         echo "<tr>";
-                        foreach($rec as $r) {
-                            if($r == '') {
-                                echo "<td scope='col'><span style='margin-right:10px;'>N/A</span><span class='material-icons' style='color:green;cursor:pointer;margin-right:10px;' >done</span><span class='material-icons' style='color:red;cursor:pointer'>clear</span></td>";
-                            } else if($r != ''){ 
+                        $id=0;
+                        $i = 0;
+                        foreach($rec as $key=>$r) {
+                            if($key == 0) {
+                                $id = $r;
+                            }
+                            if($key < 3) {
                                 echo "<td scope='col'>{$r}</td>";
                             }
+                            else if($key > 2) {
+                                if($r == 'A') {
+                                    echo "<td scope='col'><span style='margin-right:10px;color:red;font-size:20px;' id={$id} class={$dates[$i]}>{$r}</span><span class='material-icons present' style='color:green;cursor:pointer;font-size:20px;margin-right:10px;'  >done</span><span class='material-icons absent' style='color:red;font-size:20px;cursor:pointer'>clear</span></td>";
+                                    $i = $i +1;
+                                } else if($r == 'P') {
+                                    echo "<td scope='col'><span style='margin-right:10px;color:green;font-size:20px;' id={$id} class={$dates[$i]}>{$r}</span><span class='material-icons present' style='color:green;cursor:pointer;font-size:20px;margin-right:10px;'  >done</span><span class='material-icons absent' style='color:red;font-size:20px;cursor:pointer'>clear</span></td>";
+                                    $i = $i +1;
+                                }
+                                
+                            
+                        }
+                                
+                                
+                            } 
                             
                         }
                         echo "</tr>";
         
                     }
-                } else if($count == 0) {
-                    echo "<h1>No entries found.</h1>";
-                }
-                
-            }
-            
-            
-            
-                
-            
-                
-            
-                
-            
-         }
-
-
-
-
-    } else {
-        session_destroy();
-        header('Location:index.html');
-    }
+                }          
 
 ?>
 
@@ -141,5 +130,6 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src='appBme.js'></script>
 </body>
 </html>
