@@ -21,3 +21,7 @@ Email : `testuser@gmail.com`
 Password : `1234`
 
 Extra users can be created directly by the database as no registration form is made yet.
+
+
+## LOGIN PAGE
+![Login Page](https://github.com/Adityesh/Spectrum-Internship/blob/master/screenshots/loginPage.PNG)
