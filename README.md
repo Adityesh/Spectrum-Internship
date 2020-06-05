@@ -33,4 +33,4 @@ Extra users can be created directly by the database as no registration form is m
 ## STUDENTS OF EACH CLASS
 ### Can be marked as present or absent by the teacher
 ### Teacher can also create classes for a particular date
-![STUDENTS OF EACH CLASS](https://github.com/Adityesh/Spectrum-Internship/blob/master/screenshots/students1.PNG)
+![STUDENTS OF EACH CLASS](https://github.com/Adityesh/Spectrum-Internship/blob/master/screenshots/students1.png)
