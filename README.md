@@ -21,3 +21,16 @@ Email : `testuser@gmail.com`
 Password : `1234`
 
 Extra users can be created directly by the database as no registration form is made yet.
+
+
+## LOGIN PAGE
+![Login Page](https://github.com/Adityesh/Spectrum-Internship/blob/master/screenshots/loginPage.PNG)
+
+## CLASSES TAKEN BY TEACHER
+![CLASSES TAKEN BY TEACHER](https://github.com/Adityesh/Spectrum-Internship/blob/master/screenshots/profileClasses.PNG)
+
+
+## STUDENTS OF EACH CLASS
+### Can be marked as present or absent by the teacher
+### Teacher can also create classes for a particular date
+![STUDENTS OF EACH CLASS](https://github.com/Adityesh/Spectrum-Internship/blob/master/screenshots/students.PNG)
