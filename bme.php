@@ -17,12 +17,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <a class="navbar-brand">Email : <?php echo $_SESSION['email'] ?></a>
-        <button type="button" class="btn btn-danger"><a href='logout.php'>Log Out</a></button>
+        <button type="button" class="btn"><a href='logout.php'>Log Out</a></button>
 </nav>
     <div class="container-fluid">
     <div class="header">
-    <h1 style="display:flex;align-items:center;">Students of B.M.E <a href='section.php' style="margin-left:10px;" class="btn btn-success">Back</a></h1>
-    <form action="table_bme.php" method="POST" style="display:flex; margin-bottom:20px">
+    <h1 style="display:flex;align-items:center;margin:30px 0;justify-content:space-between">Students of B.C.E <a href='section.php' style="margin-left:10px;" class="btn btn-success">Back</a></h1>    <form action="table_bme.php" method="POST" style="display:flex; margin-bottom:20px">
         <label for="example-date-input" class="col-2 col-form-label"><h4>New Date for class:</h4></label>
         <input class="form-control" type="date" id="example-date-input" style="width:30%;" name="date">
         <button type="submit" class="btn btn-success" id="newClass">NEW</button>
@@ -100,10 +99,10 @@
                             }
                             else if($key > 2) {
                                 if($r == 'A') {
-                                    echo "<td scope='col'><span style='margin-right:10px;color:red;font-size:20px;' id={$id} class={$dates[$i]}>{$r}</span><span class='material-icons present' style='color:green;cursor:pointer;font-size:20px;margin-right:10px;'  >done</span><span class='material-icons absent' style='color:red;font-size:20px;cursor:pointer'>clear</span></td>";
+                                    echo "<td scope='col'><span style='margin-right:10px;color:red;font-size:20px;' id={$id} class={$dates[$i]}>{$r}</span><span class='present' style='color:white;cursor:pointer;font-size:15px;margin-right:10px;border:none;border-radius:5px;background-color:green;padding:2px 4px'>Present</span><span class='absent' style='color:white;font-size:15px;cursor:pointer;border:none;border-radius:5px;background-color:red;padding:2px 4px'>Absent</span></td>";
                                     $i = $i +1;
                                 } else if($r == 'P') {
-                                    echo "<td scope='col'><span style='margin-right:10px;color:green;font-size:20px;' id={$id} class={$dates[$i]}>{$r}</span><span class='material-icons present' style='color:green;cursor:pointer;font-size:20px;margin-right:10px;'  >done</span><span class='material-icons absent' style='color:red;font-size:20px;cursor:pointer'>clear</span></td>";
+                                    echo "<td scope='col'><span style='margin-right:10px;color:green;font-size:20px;' id={$id} class={$dates[$i]}>{$r}</span><span class='present' style='color:white;cursor:pointer;font-size:15px;margin-right:10px;border:none;border-radius:5px;background-color:green;padding:2px 4px'>Present</span><span class='absent' style='color:white;font-size:15px;cursor:pointer;border:none;border-radius:5px;background-color:red;padding:2px 4px'>Absent</span></td>";
                                     $i = $i +1;
                                 }
                                 
